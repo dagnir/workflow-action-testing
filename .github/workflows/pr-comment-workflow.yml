@@ -5,6 +5,8 @@ jobs:
   pr_commented:
     # This job only runs for pull request comments
     name: PR comment
+    env:
+      PR_NUMBER: ${{ github.event.number }}
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
